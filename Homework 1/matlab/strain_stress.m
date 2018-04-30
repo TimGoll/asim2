@@ -3,7 +3,7 @@
 function [strain, stress] = strain_stress(displacement, force, length, diameter)
 
 strain = (displacement - length) / length;
-stress = force / (pi * (diameter / 2)^2);
+stress = force / (pi * (diameter / 2)^2) / (10^9);
 
 figure('Name', 'Strain-Stress graph');
 plot(strain, stress, 'Linewidth', 1);

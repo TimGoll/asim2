@@ -5,10 +5,10 @@ strain2 = strain(42:150);
 strain3 = strain(187:248);
 strain4 = strain(248:347);
 
-f1 = (192.86*strain1)*10^8;
-f2 = linspace(2.7*10^8,2.7*10^8,109);
-f3 = (1.5714*10^10*(strain3)-4.84*10^8);
-f4 = linspace(0.8967*10^8,0.8967*10^8,100);
+f1 = (192.86*strain1)*10^8  *10^-9;
+f2 = linspace(2.7*10^8,2.7*10^8,109)  *10^-9;
+f3 = (1.5714*10^10*(strain3)-4.84*10^8)  *10^-9;
+f4 = linspace(0.8967*10^8,0.8967*10^8,100)  *10^-9;
 
 figure('Name', 'approximated single-crystal');
 plot(strain, stress, 'Linewidth', 1);
