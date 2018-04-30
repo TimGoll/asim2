@@ -1,4 +1,4 @@
-function [] = single_crystal(id, strain, stress)
+function [epsilon_A_T0, epsilon_M_T0, epsilon_T, sigma_A_T0, sigma_M_T0] = single_crystal(strain, stress)
 
 strain1 = strain(1:42);
 strain2 = strain(42:150);
@@ -10,12 +10,12 @@ f2 = linspace(2.7*10^8,2.7*10^8,109);
 f3 = (1.5714*10^10*(strain3)-4.84*10^8);
 f4 = linspace(0.8967*10^8,0.8967*10^8,100);
 
-figure(id);
+figure('Name', 'approximated single-crystal');
 plot(strain, stress, 'Linewidth', 1);
 grid;
 grid minor;
 xlabel 'Strain';
-ylabel 'Stress in Pa';
+ylabel 'Stress [GPa]';
 set(gca,'FontSize', 14);
 hold on;
 plot(strain1, f1, 'Linewidth', 2, 'color', 'r');
@@ -25,6 +25,13 @@ plot(strain4, f4, 'Linewidth', 2, 'color', 'r');
 
 % either or, not both!
 %boxPlot(strain, stress, 42, 140, 187, 260, 335);
+
+% outputs
+epsilon_A_T0 = 0.0125;
+epsilon_M_T0 = 0.0575;
+epsilon_T    = 0.045;
+sigma_A_T0   = 0.875;
+sigma_M_T0   = 0.375;
 
 end
 
@@ -64,12 +71,12 @@ function [] = boxPlot (strain, stress, pos1, pos2, pos3, pos4, pos5)
     f4_5 = ((gradient4_5*strain4_5)+intercept4_5);
     f5_1 = ((gradient5_1*strain5_1)+intercept5_1);
     
-    figure(3);
+    figure('Name', 'approximated single-crystal');
     plot(strain,stress,'Linewidth',1);
     grid;
     grid minor;
     xlabel 'Strain';
-    ylabel 'Stress in Pa';
+    ylabel 'Stress [GPa]';
     set(gca,'FontSize',14);
     hold on;
     
