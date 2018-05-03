@@ -23,10 +23,8 @@ plot(strain2, f2, 'Linewidth', 2, 'color', 'r');
 plot(strain3, f3, 'Linewidth', 2, 'color', 'r');
 plot(strain4, f4, 'Linewidth', 2, 'color', 'r');
 
-% either or, not both!
-%boxPlot(strain, stress, 42, 140, 187, 260, 335);
 
-% outputs
+% outputs (values from graphs)
 epsilon_A_T0 = 0.014;
 epsilon_M_T0 = 0.0365;
 epsilon_T    = 0.031;

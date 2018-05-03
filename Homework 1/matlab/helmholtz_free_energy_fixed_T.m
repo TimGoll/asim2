@@ -7,7 +7,7 @@ plot(epsilon, psi, 'Linewidth', 1);
 grid;
 grid minor;
 xlabel 'Strain [%]';
-ylabel 'Helmholtz Free Energy at T0 = 373K [GPa]';
+ylabel 'Helmholtz Free Energy [GPa]';
 set(gca, 'FontSize', 14);
 
 end

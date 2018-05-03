@@ -16,7 +16,7 @@ legend(string(T0)+'K', string(T1)+'K', string(T2)+'K', string(T3)+'K', string(T4
 grid;
 grid minor;
 xlabel 'Strain [%]';
-ylabel 'Helmholtz Free Energy at multiple Temperatures [T0=' + string(T0) + 'K] [GPa]';
+ylabel 'Helmholtz Free Energy [GPa]';
 set(gca, 'FontSize', 14);
 
 end
