@@ -14,7 +14,7 @@ figure('Name', 'approximated single-crystal');
 plot(strain, stress, 'Linewidth', 1);
 grid;
 grid minor;
-xlabel 'Strain';
+xlabel 'Strain [%]';
 ylabel 'Stress [GPa]';
 set(gca,'FontSize', 14);
 hold on;
@@ -27,11 +27,11 @@ plot(strain4, f4, 'Linewidth', 2, 'color', 'r');
 %boxPlot(strain, stress, 42, 140, 187, 260, 335);
 
 % outputs
-epsilon_A_T0 = 0.0125;
-epsilon_M_T0 = 0.0575;
-epsilon_T    = 0.045;
-sigma_A_T0   = 0.875;
-sigma_M_T0   = 0.375;
+epsilon_A_T0 = 0.014;
+epsilon_M_T0 = 0.0365;
+epsilon_T    = 0.031;
+sigma_A_T0   = 0.27;
+sigma_M_T0   = 0.09;
 
 end
 

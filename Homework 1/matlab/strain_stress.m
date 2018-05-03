@@ -9,7 +9,7 @@ figure('Name', 'Strain-Stress graph');
 plot(strain, stress, 'Linewidth', 1);
 grid;
 grid minor;
-xlabel 'Strain';
+xlabel 'Strain [%]';
 ylabel 'Stress [GPa]';
 set(gca, 'FontSize', 14);
 

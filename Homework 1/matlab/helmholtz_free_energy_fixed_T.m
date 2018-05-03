@@ -6,8 +6,8 @@ figure('Name', 'Helmholtz Free Energy at ' + string(T) + 'K [T0=' + string(T0) +
 plot(epsilon, psi, 'Linewidth', 1);
 grid;
 grid minor;
-xlabel 'Strain';
-ylabel 'Free Energy [GPa]';
+xlabel 'Strain [%]';
+ylabel 'Helmholtz Free Energy at T0 = 373K [GPa]';
 set(gca, 'FontSize', 14);
 
 end
