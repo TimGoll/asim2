@@ -36,7 +36,7 @@ params.poisson      = 0.3;                  %   Poisson's ratio                 
 
 initConds = struct;
 
-initConds.xp0 		= 0.0;                	% 	Initial phase fraction x+   [-]
+initConds.xp0 		= 1.0;                	% 	Initial phase fraction x+   [-]
 initConds.xm0 		= 0.0;                	%	Initial phase fraction x-   [-]
 initConds.T0 		= 293;                  % 	Initial temperature of wire [K]
 
@@ -47,6 +47,7 @@ bias.g = 9.81;                              %   Gravitational acceleration [m/s^
 bias.y0 = 0.1054;                           %   Initial condition for SMA length in case of bias mass [m]
 bias.v0 = 0;                                %   Initial condition for SMA velocity in case of bias mass [m/s]             
 
+%%Bias parameters - spring
 
-
-
+spring.k = 325.61;
+spring.y0 = 0.1088;
