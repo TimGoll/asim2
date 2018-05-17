@@ -1,0 +1,6 @@
+#mac directory files
+*.DS_Store
+
+#matlab files
+*autosave
+**/slprj/
