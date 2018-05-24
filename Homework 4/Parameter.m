@@ -1,3 +1,4 @@
+commandwindow;
 %% SMA Parameters
 
 params = struct;
