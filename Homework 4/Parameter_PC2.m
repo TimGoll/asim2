@@ -37,7 +37,7 @@ params_PC2.poisson      = 0.3;                  %   Poisson's ratio             
 
 initConds_PC2 = struct;		% initial conditions
 
-initConds_PC2.xp0 		= 0.0;                	% 	Initial phase fraction x+
+initConds_PC2.xp0 		= 0.96;                	% 	Initial phase fraction x+
 initConds_PC2.xm0 		= 0.0;                	%	Initial phase fraction x-
 initConds_PC2.T0 		= 293;                  % 	Initial temperature of wire
 
