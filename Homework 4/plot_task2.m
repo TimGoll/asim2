@@ -1,5 +1,4 @@
-
-figure('Name', 'SMA displacement 0.01 Hz]');
+figure('Name', 'SMA displacement-temperature]');
 plot(displacement, temperature, 'Linewidth', 2);
 grid;
 grid minor;
@@ -8,7 +7,7 @@ ylabel 'Temperature [K]';
 set(gca, 'FontSize', 14);
 
 
-figure('Name', 'SMA displacement');
+figure('Name', 'SMA resistance-displacement');
 plot(resistance, displacement , 'Linewidth', 2);
 grid;
 grid minor;
