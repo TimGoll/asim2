@@ -10,6 +10,6 @@ figure('Name', 'SMA actuator [Temperature-Time]');
 plot(time, temperature, 'Linewidth', 2);
 grid;
 grid minor;
-xlabel 'Temperature [K]';
-ylabel 'Time [s]';
+xlabel 'Time [s]';
+ylabel 'Temperature [K]';
 set(gca, 'FontSize', 14);
