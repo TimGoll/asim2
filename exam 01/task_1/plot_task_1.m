@@ -3,18 +3,10 @@ clc;
 
 %% DEFINE PARAMETER
 Parameter_PC2;
-<<<<<<< HEAD
-param_N = 100;
-param_Li = 1;
-||||||| merged common ancestors
-param_N = 1;
-param_Li = 0.1;
-=======
 params_PC2.delta_T = 80;
 
 arr_N = [1 2 3];
 arr_L = [0.08 0.1 0.12];
->>>>>>> 2469444c94d40c53a330725d9e93a8f18cb5e767
 
 %% SIMULATE
 
