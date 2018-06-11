@@ -3,9 +3,14 @@ clc;
 
 %% DEFINE PARAMETER
 Parameter_PC2;
-param_N = 10;
-param_Li = 0.1;
-param_y0 = -0.04;
+params_PC2.delta_T = 80;
+param_N            = 150;
+params_PC2.L0      = 1.2;
+
+param_J = params_PC2.alpha * 2 * pi * params_PC2.r0 * params_PC2.L0 * param_N * params_PC2.delta_T;
+
+param_K            = 500;
+param_y0           = -0.6;
 
 %% SIMULATE
 a = sim('SMA_displacementIn_PC2','SimulationMode','normal');

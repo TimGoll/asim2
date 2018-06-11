@@ -5,8 +5,8 @@ clc;
 Parameter_PC2;
 params_PC2.delta_T = 80;
 
-arr_N = [1 2 3];
-arr_L = [0.08 0.1 0.12];
+%arr_N = [1 2 3];
+%arr_L = [0.075 0.1 0.125];
 
 %% SIMULATE
 
@@ -22,12 +22,13 @@ arr_L = [0.08 0.1 0.12];
 % set(gca, 'FontSize', 14);
 
 figure('Name', 'SMA actuator [Force-Displacement SMA]');
+
 for param_N = arr_N
     for param_Li = arr_L
         
-        param_J = params_PC2.alpha * 2 * pi * params_PC2.r0 * param_Li * param_N * params_PC2.delta_T;
         params_PC2.L0 = param_Li; %overwrite value for the SMA block
-        disp(params_PC2.L0);
+        param_J = params_PC2.alpha * 2 * pi * params_PC2.r0 * params_PC2.L0 * param_N * params_PC2.delta_T;
+        %disp(params_PC2.L0 + 1);
         a = sim('SMA_displacementIn_PC2','SimulationMode','normal');
         
         if (~(param_N == arr_N(1) && param_Li == arr_L(1))) %print hold on not in the first place
@@ -39,6 +40,7 @@ for param_N = arr_N
         
     end
 end
+
 grid minor;
 xlabel 'Displacement [m]';
 ylabel 'Force [N]';

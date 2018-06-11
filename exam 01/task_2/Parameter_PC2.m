@@ -21,7 +21,7 @@ params_PC2.latentHpls 	= 12e3*params_PC2.rho;		% 	Latent heat of phase transform
 params_PC2.latentHmns 	= 12e3*params_PC2.rho;		% 	Latent heat of phase transformation 	[J/m^3]
 
 params_PC2.r0 			= 38e-6;				%	wire radius							[m]
-params_PC2.L0 			= 100e-3;				%	wire length							[m]
+%params_PC2.L0 			= 100e-3;				%	wire length							[m]
 
 params_PC2.T0R          = 343;                  %   reference temperature for computing R	[K]
 params_PC2.rho0A        = 8.9e-7;               %   resistivity of austenite            [Ohm*m]
