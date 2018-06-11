@@ -1,6 +1,7 @@
 %% DEFINE PARAMETER
 Parameter_PC2;
-param_N = 10;
+param_N = 1;
+param_Li = 0.1;
 
 %% SIMULATE
 a = sim('SMA_displacementIn_PC2','SimulationMode','normal');
@@ -12,4 +13,12 @@ grid;
 grid minor;
 xlabel 'Displacement [m]';
 ylabel 'Force [N]';
+set(gca, 'FontSize', 14);
+
+figure('Name', 'SMA actuator [Time-Temperature]');
+plot(a.get('time'), a.get('temperature'), 'Linewidth', 2);
+grid;
+grid minor;
+xlabel 'Time [s]';
+ylabel 'Temperatire [K]';
 set(gca, 'FontSize', 14);
