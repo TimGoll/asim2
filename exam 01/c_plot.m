@@ -6,8 +6,7 @@ xlabel 'Displacement [m]';
 ylabel 'Force [N]';
 set(gca, 'FontSize', 14);
 
-
-figure('Name', 'SMA actuator [Force-Displacement Spring]');
+hold on;
 plot(Displacement, Spring_Force, 'Linewidth', 2);
 grid;
 grid minor;
