@@ -1,7 +1,7 @@
 %% DEFINE PARAMETER
 Parameter_PC2;
-param_N = 1;
-param_Li = 0.1;
+param_N = 100;
+param_Li = 1;
 
 %% SIMULATE
 a = sim('SMA_displacementIn_PC2','SimulationMode','normal');

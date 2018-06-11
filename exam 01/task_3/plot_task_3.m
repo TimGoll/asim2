@@ -1,6 +1,7 @@
-_%% DEFINE PARAMETER
+%% DEFINE PARAMETER
 Parameter_PC2;
 param_N = 10;
+param_J_TOT = 4;
 
 %% SIMULATE
 a = sim('SMA_displacementIn_PC2','SimulationMode','normal');
@@ -8,10 +9,10 @@ a = sim('SMA_displacementIn_PC2','SimulationMode','normal');
 %% PLOT
 figure('Name', 'SMA actuator [Force-Displacement SMA]');
 
-plot(a.get('Displacement'), a.get('F_TOT'), 'Linewidth', 2);
+plot(a.get('temperature'), a.get('time'), 'Linewidth', 2);
 
 hold on;
-plot(a.get('Displacement'), a.get('Spring_Force'), 'Linewidth', 2);
+plot(a.get('normalized_stroke'), a.get('time'), 'Linewidth', 2);
 
 
 
