@@ -14,20 +14,28 @@ param_J0_yin           = 0.7845;
 
 param_factor           = 0.0137;
 
+param_lin_a0           = 0.0912;
+param_lin_a1           = - 7/272500;
+param_lin_q_max        = 0.014;
+%param_con_P            = 0.45*3;
+%param_con_I            = param_con_P/(0.85*3);
+param_con_P            = 0.45*2.2;
+param_con_I            = param_con_P/(0.85*0.9);
+
 param_J = params_PC2.alpha * 2 * pi * params_PC2.r0 * params_PC2.L0 * param_N * params_PC2.delta_T;
 
 %% SIMULATE
 a = sim('SMA_displacementIn_PC2','SimulationMode','normal');
 
 %% PLOT
-figure('Name', 'SMA actuator [Force-Displacement SMA]');
+%figure('Name', 'SMA actuator [Force-Displacement SMA]');
 
 %hold on;
-plot(a.get('time'), a.get('valve_q'), 'Linewidth', 2);
+%plot(a.get('R_TOT'), a.get('valve_q'), 'Linewidth', 2);
 
-xlabel 'Time [s]';
-ylabel 'Q [m^3/s]';
+%xlabel 'Time [s]';
+%ylabel 'Q [m^3/s]';
 
-grid;
-grid minor;
-set(gca, 'FontSize', 14);
+%grid;
+%grid minor;
+%set(gca, 'FontSize', 14);
