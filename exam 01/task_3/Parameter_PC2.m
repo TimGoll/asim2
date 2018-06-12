@@ -2,7 +2,7 @@
 
 params_PC2 = struct;
 
-params_PC2.internal_loops_flag = 1;             %   If 1 it simulates internal loops, if 0 it neglects them
+params_PC2.internal_loops_flag = 0;             %   If 1 it simulates internal loops, if 0 it neglects them
 params_PC2.internal_rate_flag = 0;              %   If 1 it calculates transformation rate internally, if 0 it calculates transformaton rate externally
 
 params_PC2.Ea 			= 50.0e9;				%	Austenite modulus of elasticity		[N/m^2]
