@@ -17,7 +17,7 @@ param_factor           = 0.0137;
 param_J = params_PC2.alpha * 2 * pi * params_PC2.r0 * params_PC2.L0 * param_N * params_PC2.delta_T;
 
 %% SIMULATE
-a = sim('SMA_displacementIn_PC2','SimulationMode','normal');
+a = sim('SMA_displacementIn_PC2_5','SimulationMode','normal');
 
 %% PLOT
 figure('Name', 'SMA actuator [Force-Displacement SMA]');
@@ -25,7 +25,7 @@ figure('Name', 'SMA actuator [Force-Displacement SMA]');
 %hold on;
 plot(a.get('R_TOT'), a.get('valve_q'), 'Linewidth', 2);
 
-xlabel 'Time [s]';
+xlabel 'Resistance [Ohm]';
 ylabel 'Q [m^3/s]';
 
 grid;

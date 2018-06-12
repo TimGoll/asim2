@@ -18,25 +18,25 @@ param_preload      = 0;
 %% SIMULATE AND PLOT
 figure('Name', 'SMA actuator [Force-Displacement SMA]');
 
-a = sim('SMA_displacementIn_PC2','SimulationMode','normal');
+a = sim('SMA_displacementIn_PC2_2','SimulationMode','normal');
 plot(a.get('Displacement'), a.get('F_TOT'), 'Linewidth', 2, 'DisplayName', 'J_{max} [N=' + string(param_N) + ', L=' + string(params_PC2.L0) + ']');
 
 hold on;
 param_J = 0;
-a = sim('SMA_displacementIn_PC2','SimulationMode','normal');
+a = sim('SMA_displacementIn_PC2_2','SimulationMode','normal');
 plot(a.get('Displacement'), a.get('F_TOT'), 'Linewidth', 2, 'DisplayName', 'J_{0} [N=' + string(param_N) + ', L=' + string(params_PC2.L0) + ']');
 
 hold on;
 param_preload = param_preload_0;
-a = sim('SMA_displacementIn_PC2','SimulationMode','normal');
+a = sim('SMA_displacementIn_PC2_2','SimulationMode','normal');
 plot(a.get('Displacement'), a.get('Spring_Force'), 'Linewidth', 2, 'DisplayName', 'Spring [K=' + string(param_K) + 'N/m, y0=' + string(param_preload) + 'm');
 
 param_preload = param_preload_1;
-a = sim('SMA_displacementIn_PC2','SimulationMode','normal');
+a = sim('SMA_displacementIn_PC2_2','SimulationMode','normal');
 plot(a.get('Displacement'), a.get('Spring_Force'), 'Linewidth', 2, 'DisplayName', 'Spring [K=' + string(param_K) + 'N/m, y0=' + string(param_preload) + 'm');
 
 param_preload = param_preload_2;
-a = sim('SMA_displacementIn_PC2','SimulationMode','normal');
+a = sim('SMA_displacementIn_PC2_2','SimulationMode','normal');
 plot(a.get('Displacement'), a.get('Spring_Force'), 'Linewidth', 2, 'DisplayName', 'Spring [K=' + string(param_K) + 'N/m, y0=' + string(param_preload) + 'm');
 
 

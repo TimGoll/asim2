@@ -15,7 +15,7 @@ param_J0_yin           = 0.7845;
 param_J = params_PC2.alpha * 2 * pi * params_PC2.r0 * params_PC2.L0 * param_N * params_PC2.delta_T;
 
 %% SIMULATE
-a = sim('SMA_displacementIn_PC2','SimulationMode','normal');
+a = sim('SMA_displacementIn_PC2_3','SimulationMode','normal');
 
 %% PLOT
 figure('Name', 'SMA actuator [Force-Displacement SMA]');

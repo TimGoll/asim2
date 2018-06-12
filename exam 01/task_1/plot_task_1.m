@@ -38,7 +38,7 @@ for param_Li = arr_L
         params_PC2.L0 = param_Li; %overwrite value for the SMA block
         
         param_J = 0;
-        a = sim('SMA_displacementIn_PC2','SimulationMode','normal');
+        a = sim('SMA_displacementIn_PC2_1','SimulationMode','normal');
         figure(figures(counter)); hold on;
         plot(a.get('Displacement'), a.get('F_TOT'), 'Linewidth', 2, 'DisplayName', 'N=' + string(param_N) + ', J=' + string(param_J) + 'W');
         
@@ -49,7 +49,7 @@ for param_Li = arr_L
         legend('show', 'Location','northeast')
         
         param_J = params_PC2.alpha * 2 * pi * params_PC2.r0 * params_PC2.L0 * param_N * params_PC2.delta_T;
-        a = sim('SMA_displacementIn_PC2','SimulationMode','normal');
+        a = sim('SMA_displacementIn_PC2_1','SimulationMode','normal');
         figure(figures(counter+1)); hold on;
         plot(a.get('Displacement'), a.get('F_TOT'), 'Linewidth', 2, 'DisplayName', 'N=' + string(param_N) + ', J=' + string(param_J) + 'W');
         

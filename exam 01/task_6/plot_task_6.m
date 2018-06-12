@@ -25,17 +25,19 @@ param_con_I            = param_con_P/(0.85*0.9);
 param_J = params_PC2.alpha * 2 * pi * params_PC2.r0 * params_PC2.L0 * param_N * params_PC2.delta_T;
 
 %% SIMULATE
-a = sim('SMA_displacementIn_PC2','SimulationMode','normal');
+a = sim('SMA_displacementIn_PC2_6','SimulationMode','normal');
 
 %% PLOT
-%figure('Name', 'SMA actuator [Force-Displacement SMA]');
+figure('Name', 'SMA actuator [PI]');
 
-%hold on;
-%plot(a.get('R_TOT'), a.get('valve_q'), 'Linewidth', 2);
+plot(a.get('time'), a.get('q_ref'), 'Linewidth', 2, 'DisplayName', 'reference value');
+hold on;
+plot(a.get('time'), a.get('q_current'), 'Linewidth', 2, 'DisplayName', 'regulated value');
 
-%xlabel 'Time [s]';
-%ylabel 'Q [m^3/s]';
+xlabel 'Time [s]';
+ylabel 'J [W]';
 
-%grid;
-%grid minor;
-%set(gca, 'FontSize', 14);
+grid;
+grid minor;
+set(gca, 'FontSize', 14);
+legend('show');
