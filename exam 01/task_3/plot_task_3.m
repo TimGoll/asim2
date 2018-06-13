@@ -16,10 +16,11 @@ param_J = params_PC2.alpha * 2 * pi * params_PC2.r0 * params_PC2.L0 * param_N * 
 
 %% SIMULATE
 a = sim('SMA_displacementIn_PC2_3','SimulationMode','normal');
+normalized_stroke = a.get('normalized_stroke') .* 100;
 
 %% PLOT
 figure('Name', 'SMA actuator [Force-Displacement SMA]');
-plot(a.get('time'), a.get('normalized_stroke'), 'Linewidth', 2);
+plot(a.get('time'), normalized_stroke, 'Linewidth', 2);
 xlabel 'Time [s]';
 ylabel 'Stroke [%]';
 grid;
