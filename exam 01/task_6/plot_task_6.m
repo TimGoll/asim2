@@ -14,8 +14,8 @@ param_J0_yin           = 0.7845;
 
 param_factor           = 0.0137;
 
-param_lin_a0           = 0.0912;
-param_lin_a1           = - 7/272500;
+param_lin_a0           = 0.092;
+param_lin_a1           = - 7/675;
 param_lin_q_max        = 0.014;
 %param_con_P            = 0.45*3;
 %param_con_I            = param_con_P/(0.85*3);
