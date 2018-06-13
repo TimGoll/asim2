@@ -23,20 +23,31 @@ param_con_P            = 0.45*2.2;
 param_con_I            = param_con_P/(0.85*0.9);
 
 param_J = params_PC2.alpha * 2 * pi * params_PC2.r0 * params_PC2.L0 * param_N * params_PC2.delta_T;
-
 %% SIMULATE
 a = sim('SMA_displacementIn_PC2_6','SimulationMode','normal');
 
 %% PLOT
+
 figure('Name', 'SMA valve J_ref, J_current');
 
-plot(a.get('time'), a.get('J_ref'), 'Linewidth', 2, 'DisplayName', 'reference value');
-hold on;
-plot(a.get('time'), a.get('J_current'), 'Linewidth', 2, 'DisplayName', 'regulated value');
+plot(a.get('time'), a.get('temperature'), 'Linewidth', 2, 'DisplayName', 'time-temperature');
+
+xlabel 'Time [s]';
+ylabel 'Temperature [K]';
+
+grid;
+grid minor;
+set(gca, 'FontSize', 14);
+legend('show');
+
+
+figure('Name', 'SMA valve q_ref');
+
+plot(a.get('time'), a.get('R_TOT'), 'Linewidth', 2, 'DisplayName', 'time-resistance');
 
 
 xlabel 'Time [s]';
-ylabel 'J [W]';
+ylabel 'Resistance [Ohm]';
 
 grid;
 grid minor;
@@ -44,10 +55,12 @@ set(gca, 'FontSize', 14);
 legend('show');
 
 figure('Name', 'SMA valve q_ref');
-plot(a.get('time'), a.get('q_ref'), 'Linewidth', 2, 'DisplayName', 'reference value');
+
+plot(a.get('time'), a.get('normalized_stroke'), 'Linewidth', 2, 'DisplayName', 'time-normalized_stroke');
+
 
 xlabel 'Time [s]';
-ylabel 'q [m^3/s]';
+ylabel 'Stroke[%]';
 
 grid;
 grid minor;
