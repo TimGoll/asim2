@@ -26,7 +26,7 @@ figure('Name', 'SMA actuator [Force-Displacement SMA]');
 plot(a.get('R_TOT'), a.get('valve_q'), 'Linewidth', 2);
 
 xlabel 'Resistance [Ohm]';
-ylabel 'Q [m^3/s]';
+ylabel 'q [m^3/s]';
 
 grid;
 grid minor;

@@ -28,11 +28,12 @@ param_J = params_PC2.alpha * 2 * pi * params_PC2.r0 * params_PC2.L0 * param_N * 
 a = sim('SMA_displacementIn_PC2_6','SimulationMode','normal');
 
 %% PLOT
-figure('Name', 'SMA actuator [PI]');
+figure('Name', 'SMA valve J_ref, J_current');
 
-plot(a.get('time'), a.get('q_ref'), 'Linewidth', 2, 'DisplayName', 'reference value');
+plot(a.get('time'), a.get('J_ref'), 'Linewidth', 2, 'DisplayName', 'reference value');
 hold on;
-plot(a.get('time'), a.get('q_current'), 'Linewidth', 2, 'DisplayName', 'regulated value');
+plot(a.get('time'), a.get('J_current'), 'Linewidth', 2, 'DisplayName', 'regulated value');
+
 
 xlabel 'Time [s]';
 ylabel 'J [W]';
@@ -41,3 +42,15 @@ grid;
 grid minor;
 set(gca, 'FontSize', 14);
 legend('show');
+
+figure('Name', 'SMA valve q_ref');
+plot(a.get('time'), a.get('q_ref'), 'Linewidth', 2, 'DisplayName', 'reference value');
+
+xlabel 'Time [s]';
+ylabel 'q [m^3/s]';
+
+grid;
+grid minor;
+set(gca, 'FontSize', 14);
+legend('show');
+
