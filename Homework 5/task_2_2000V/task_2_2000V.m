@@ -6,7 +6,7 @@ Parameter;
 
 [time, strain, stress] = read_and_parse('../DE_relaxation_0V');
 
-params_voltage = 0;
+params_voltage = 2000;
 
 a = sim('DE_epsIn_task_2', 'SimulationMode', 'normal');
 
