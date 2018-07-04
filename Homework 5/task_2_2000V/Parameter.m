@@ -8,9 +8,9 @@ params.epsilon_0 = 8.854e-12;  % 	Void permittivity			[F/m]
 %params.epsilon_r = 3;		   %	DE relative permittivity
 params.epsilon_r = 4;		   %	DE relative permittivity
 %params.C1 = 1e5;               %	DE Neo Hookean model coefficient [Pa]
-params.C1 = 3.3e5;               %	DE Neo Hookean model coefficient [Pa]
-params.kv = 1.8e5;               % 	DE viscoelastic model stiffness	[Pa]
-params.bv = 0.5e5;               %    DE viscoelastic model damping [Pa*s]
+params.C1 = 2.9e5;               %	DE Neo Hookean model coefficient [Pa]
+params.kv = 1.75e5;               % 	DE viscoelastic model stiffness	[Pa]
+params.bv = 0.6e5;               %    DE viscoelastic model damping [Pa*s]
 
 
 

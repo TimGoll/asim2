@@ -1,4 +1,4 @@
-close ALL;
+%close ALL;
 clc;
 clear;
 
@@ -11,7 +11,7 @@ params_voltage = 0;
 a = sim('DE_epsIn_task_2', 'SimulationMode', 'normal');
 
 
-figure('Name', 'SMA actuator [Time-Stress]');
+figure('Name', 'SMA actuator 0V [Time-Stress]');
 plot(time, stress, 'Linewidth', 2, 'DisplayName', 'measured');
 hold on;
 plot(a.get('time'), a.get('stress'), 'Linewidth', 2, 'DisplayName', 'simulated');
