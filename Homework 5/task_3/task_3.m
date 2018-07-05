@@ -7,14 +7,14 @@ clear;
 Parameter;
 
 params_voltage = 0;
-param_f = 0.01;
+param_f = 1;
 
 a = sim('DE_epsIn_task_3', 'SimulationMode', 'normal');
 
 figure('Name', 'SMA actuator [Time-Stress]');
 plot(stress, strain, 'Linewidth', 2, 'DisplayName', 'measured');
 hold on;
-plot(a.get('stress'), a.get('viscoelastic_strain'), 'Linewidth', 2, 'DisplayName', 'simulated');
+plot(a.get('stress'), a.get('strain'), 'Linewidth', 2, 'DisplayName', 'simulated');
 grid;
 grid minor;
 xlabel 'Stress [Pa]';
