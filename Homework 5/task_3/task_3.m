@@ -7,7 +7,7 @@ clear;
 Parameter;
 
 params_voltage = 0;
-param_f = 1;
+param_f = 0.01;
 
 a = sim('DE_epsIn_task_3', 'SimulationMode', 'normal');
 
