@@ -16,7 +16,7 @@ params.rho = 1e12;                      %	DE resistivity [Ohm*m]
 params.Re_s = 50;                       %	Electrodes resistance scaling coefficient [Ohm*m^2]
 
 initConds = struct;		% initial conditions
-initConds.epsilon           = 0;                                              % 	Initial strain, only used to compute initial viscoelastic strains [-]
+initConds.epsilon           = 1.24;                                              % 	Initial strain, only used to compute initial viscoelastic strains [-]
 initConds.epsilon_v 		= initConds.epsilon*ones(size(params.kv));        % 	Initial viscoelastic strain [-]
 initConds.q                 = 0;                                              % 	Initial charge [C]
 

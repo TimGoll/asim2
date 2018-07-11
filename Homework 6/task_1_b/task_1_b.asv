@@ -9,11 +9,12 @@ a = sim('DEA_b', 'SimulationMode', 'normal');
 
 
 figure('Name', 'displacement over time [mass + LBS]');
+plot(time, displacement, 'Linewidth', 2, 'DisplayName', 'measured');
 hold on;
 plot(a.get('time'), a.get('displacement'), 'Linewidth', 2, 'DisplayName', 'simulated');
 grid;
 grid minor;
 xlabel 'Time [s]';
-ylabel 'displacement [m]';
+ylabel 'Stress [Pa]';
 set(gca, 'FontSize', 14);
 legend('show')
