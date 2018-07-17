@@ -2,7 +2,7 @@ clc;
 clear ALL;
 close ALL;
 
-Parameter_t1; %load all params
+Parameter_t2; %load all params
 
 
 param_v = 0;
@@ -15,7 +15,7 @@ param_k1  = 10800;
 param_m1  = 0.25;
 param_g   = 9.81;
 
-a = sim('DEA_strip_t1', 'SimulationMode', 'normal');
+a = sim('DEA_strip_t2', 'SimulationMode', 'normal');
 
 figure('Name', 'DEA Force-Displacement [0V]');
 plot(a.get('displacement'), a.get('force'), 'Linewidth', 2, 'DisplayName', '0V');
@@ -27,7 +27,7 @@ set(gca, 'FontSize', 20);
 legend('show');
 %hold on;
 param_v = 2500;
-a = sim('DEA_strip_t1', 'SimulationMode', 'normal');
+a = sim('DEA_strip_t2', 'SimulationMode', 'normal');
 figure('Name', 'DEA Force-Displacement [2500V]');
 plot(a.get('displacement'), a.get('force'), 'Linewidth', 2, 'DisplayName', '2500V');
 %plot(a.get('displacement'), a.get('spring_force'), 'Linewidth', 2, 'DisplayName', 'spring');
