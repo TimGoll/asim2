@@ -1,39 +1,54 @@
 clc;
-clear ALL;
+clear;
 close ALL;
 
-Parameter_t1; %load all params
+Parameter; %load all params
 
-
-param_v = 0;
-param_f = 0.001;
-param_N = 8;
-
-param_y2  = -1.135*10^-4;
-param_ys0 = 0;
-param_k1  = 10800;
-param_m1  = 0.25;
 param_g   = 9.81;
+param_f   = 0.001;
+param_N   = 8;
+param_k1  = 10800;
+param_k2  = 43200;
+param_m1  = 0.25;
+param_m2  = 0.25;
+
+param_y2  = (-param_g * (param_m1 + param_m2)) / param_k2;
+
+param_ys0 = 0;
+param_v = 0;
 
 a = sim('DEA_strip_t1', 'SimulationMode', 'normal');
 
 figure('Name', 'DEA Force-Displacement [0V]');
-plot(a.get('displacement'), a.get('force'), 'Linewidth', 2, 'DisplayName', '0V');
-grid;
-grid minor;
-ylabel 'Force [N]';
-xlabel 'Displacement [mm]';
-set(gca, 'FontSize', 20);
-legend('show');
-%hold on;
+plot(a.get('length'), a.get('force'), 'Linewidth', 2, 'DisplayName', 'V_{DEA} = 0V');
+hold on;
+
 param_v = 2500;
 a = sim('DEA_strip_t1', 'SimulationMode', 'normal');
-figure('Name', 'DEA Force-Displacement [2500V]');
-plot(a.get('displacement'), a.get('force'), 'Linewidth', 2, 'DisplayName', '2500V');
-%plot(a.get('displacement'), a.get('spring_force'), 'Linewidth', 2, 'DisplayName', 'spring');
+plot(a.get('length'), a.get('force'), 'Linewidth', 2, 'DisplayName', 'V_{DEA} = 2500V');
+
+param_ys0 = 0.025;
+a = sim('DEA_strip_t1', 'SimulationMode', 'normal');
+plot(a.get('length'), a.get('bias_force'), 'Linewidth', 2, 'DisplayName', 'Bias, y_{s0} = ' + string(param_ys0));
+
+param_ys0 = 0.040;
+a = sim('DEA_strip_t1', 'SimulationMode', 'normal');
+plot(a.get('length'), a.get('bias_force'), 'Linewidth', 2, 'DisplayName', 'Bias, y_{s0} = ' + string(param_ys0));
+
+param_ys0 = 0.055;
+a = sim('DEA_strip_t1', 'SimulationMode', 'normal');
+plot(a.get('length'), a.get('bias_force'), 'Linewidth', 2, 'DisplayName', 'Bias, y_{s0} = ' + string(param_ys0));
+
+
+
+
+
+
+
+
 grid;
 grid minor;
 ylabel 'Force [N]';
-xlabel 'Displacement [mm]';
+xlabel 'length [m]';
 set(gca, 'FontSize', 20);
 legend('show');

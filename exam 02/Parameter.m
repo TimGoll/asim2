@@ -3,8 +3,8 @@
 
 params = struct;		% system parameters
 
-params.L1 = 50e-3;             %	DE membrane 1-length		[m]
-params.L2 = 50e-3;             %	DE membrane 2-length		[m]
+params.L1 = 0.01;             %	DE membrane 1-length		[m]
+params.L2 = 0.2;             %	DE membrane 2-length		[m]
 params.L3 = 50e-6;             %	DE membrane 3-length		[m]
 params.epsilon_0 = 8.854e-12;  % 	Void permittivity			[F/m]
 params.epsilon_r = 3;		   %	DE relative permittivity
