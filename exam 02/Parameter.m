@@ -30,7 +30,7 @@ end
 params.beta = 3*params.Ci(1)*eta/(1 - eta);
 
 initConds = struct;		% initial conditions
-initConds.epsilon1           	= 0.6;                                              % 	Initial strain 1, only used to compute initial viscoelastic strains [-]
+initConds.epsilon1           	= 0.65;                                              % 	Initial strain 1, only used to compute initial viscoelastic strains [-]
 initConds.epsilon_v1 		= initConds.epsilon1*ones(size(params.kv1));       % 	Initial viscoelastic strain 1 [-]
 initConds.epsilon_v2 		= 0*ones(size(params.kv2));       % 	Initial viscoelastic strain 2 [-]
 initConds.epsilon2          = 0;                              % 	Initial epsilon 2 [-]
