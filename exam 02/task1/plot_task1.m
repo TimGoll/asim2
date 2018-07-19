@@ -27,15 +27,15 @@ param_v = 2500;
 a = sim('DEA_strip_t1', 'SimulationMode', 'normal');
 plot(a.get('length'), a.get('force'), 'Linewidth', 2, 'DisplayName', 'V_{DEA} = 2500V');
 
-param_ys0 = 0.025;
+param_ys0 = 0.018;
 a = sim('DEA_strip_t1', 'SimulationMode', 'normal');
 plot(a.get('length'), a.get('bias_force'), 'Linewidth', 2, 'DisplayName', 'Bias, y_{s0} = ' + string(param_ys0));
 
-param_ys0 = 0.040;
+param_ys0 = 0.020;
 a = sim('DEA_strip_t1', 'SimulationMode', 'normal');
 plot(a.get('length'), a.get('bias_force'), 'Linewidth', 2, 'DisplayName', 'Bias, y_{s0} = ' + string(param_ys0));
 
-param_ys0 = 0.055;
+param_ys0 = 0.022;
 a = sim('DEA_strip_t1', 'SimulationMode', 'normal');
 plot(a.get('length'), a.get('bias_force'), 'Linewidth', 2, 'DisplayName', 'Bias, y_{s0} = ' + string(param_ys0));
 
@@ -45,7 +45,7 @@ plot(a.get('length'), a.get('bias_force'), 'Linewidth', 2, 'DisplayName', 'Bias,
 
 
 
-
+ylim([0 10]);
 grid;
 grid minor;
 ylabel 'Force [N]';
