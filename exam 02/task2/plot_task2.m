@@ -21,20 +21,20 @@ param_g   = 9.81;
 a = sim('DEA_strip_t2', 'SimulationMode', 'normal');
 
 figure('Name', 'y_1 - time');
-plot(a.get('time'), a.get('y_1'), 'Linewidth', 2, 'DisplayName', 'y_1');
-grid;
+plot(a.get('time'), a.get('y_1'), 'b', 'Linewidth', 2, 'DisplayName', 'y_1 at ' + string(char(949)) + '_1 = 0.65');
+
 grid minor;
 ylabel 'Displacement [m]';
 xlabel 'Time [s]';
 set(gca, 'FontSize', 20);
 legend('show');
-%hold on;
-%param_v = 2500;
+ylim([0.0155 0.0175]);
+
+
 a = sim('DEA_strip_t2', 'SimulationMode', 'normal');
 figure('Name', 'y_2 - time');
-plot(a.get('time'), a.get('y_2'), 'Linewidth', 2, 'DisplayName', 'y_2');
+plot(a.get('time'), a.get('y_2'), 'b', 'Linewidth', 2, 'DisplayName', 'y_2 at ' + string(char(949)) + '_1 = 0.65');
 
-grid;
 grid minor;
 ylabel 'Displacement [m]';
 xlabel 'Time [s]';
