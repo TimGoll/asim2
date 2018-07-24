@@ -9,7 +9,7 @@ if (doSimulation == true)
 end
 close ALL;
 
-sim_time = 55;
+param_simtime = 55;
 
 param_f_res = 0;
 param_v = 0;
@@ -25,18 +25,26 @@ param_m1  = 0.25;
 param_m2  = 0.25;
 param_g   = 9.81;
 
-if (doSimulation == true)
+if (doSimulation == true)    
     param_f_res = 34.5;
+    
+    set_param('DEA_strip_t6_pwm', 'StopTime', param_simtime');
     a1 = sim('DEA_strip_t6_pwm', 'SimulationMode', 'normal');
+    
+    set_param('DEA_strip_t6_sawtooth', 'StopTime', param_simtime');
     b1 = sim('DEA_strip_t6_sawtooth', 'SimulationMode', 'normal');
+    
+    set_param('DEA_strip_t6_sinus', 'StopTime', param_simtime');
     c1 = sim('DEA_strip_t6_sinus', 'SimulationMode', 'normal');
+    
+    set_param('DEA_strip_t6_triangle', 'StopTime', param_simtime');
     d1 = sim('DEA_strip_t6_triangle', 'SimulationMode', 'normal');
     
-    param_f_res = 17;
-    a2 = sim('DEA_strip_t6_pwm', 'SimulationMode', 'normal');
-    b2 = sim('DEA_strip_t6_sawtooth', 'SimulationMode', 'normal');
-    c2 = sim('DEA_strip_t6_sinus', 'SimulationMode', 'normal');
-    d2 = sim('DEA_strip_t6_triangle', 'SimulationMode', 'normal');
+    %param_f_res = 17;
+    %a2 = sim('DEA_strip_t6_pwm', 'SimulationMode', 'normal');
+    %b2 = sim('DEA_strip_t6_sawtooth', 'SimulationMode', 'normal');
+    %c2 = sim('DEA_strip_t6_sinus', 'SimulationMode', 'normal');
+    %d2 = sim('DEA_strip_t6_triangle', 'SimulationMode', 'normal');
 end
 
 
@@ -49,7 +57,7 @@ grid minor;
 ylabel 'Displacement [m]';
 xlabel 'Time [s]';
 set(gca, 'FontSize', 20);
-xlim([0 55]);
+xlim([0 param_simtime]);
 ylim([0.014 0.020]);
 
 figure('Name', 'y_2 - f=34.5 // pwm');
@@ -59,7 +67,7 @@ grid minor;
 ylabel 'Displacement [m]';
 xlabel 'Time [s]';
 set(gca, 'FontSize', 20);
-xlim([0 55]);
+xlim([0 param_simtime]);
 ylim([-0.002 0.002]);
 
 figure('Name', 'f=34.5 // pwm - POWER');
@@ -69,7 +77,7 @@ grid minor;
 ylabel 'Power [W]';
 xlabel 'Time [s]';
 set(gca, 'FontSize', 20);
-xlim([0 55]);
+xlim([0 param_simtime]);
 %ylim([-10 10]);
 
 power_ = a1.get('power');
@@ -77,7 +85,7 @@ power_result = 0;
 for i=1:1:size(power_)
     power_result = power_result + power_(i);
 end
-power_result = power_result / sim_time;
+power_result = power_result / param_simtime;
 disp('f=34.5 // pwm - POWER: ' + string(power_result));
 
 
@@ -89,7 +97,7 @@ grid minor;
 ylabel 'Displacement [m]';
 xlabel 'Time [s]';
 set(gca, 'FontSize', 20);
-xlim([0 55]);
+xlim([0 param_simtime]);
 ylim([0.014 0.020]);
 
 figure('Name', 'y_2 - f=34.5 // sawtooth');
@@ -99,7 +107,7 @@ grid minor;
 ylabel 'Displacement [m]';
 xlabel 'Time [s]';
 set(gca, 'FontSize', 20);
-xlim([0 55]);
+xlim([0 param_simtime]);
 ylim([-0.002 0.002]);
 
 figure('Name', 'f=34.5 // sawtooth - POWER');
@@ -109,7 +117,7 @@ grid minor;
 ylabel 'Power [W]';
 xlabel 'Time [s]';
 set(gca, 'FontSize', 20);
-xlim([0 55]);
+xlim([0 param_simtime]);
 %ylim([-10 10]);
 
 power_ = b1.get('power');
@@ -117,7 +125,7 @@ power_result = 0;
 for i=1:1:size(power_)
     power_result = power_result + power_(i);
 end
-power_result = power_result / sim_time;
+power_result = power_result / param_simtime;
 disp('f=34.5 // sawtooth - POWER: ' + string(power_result));
 
 
@@ -129,7 +137,7 @@ grid minor;
 ylabel 'Displacement [m]';
 xlabel 'Time [s]';
 set(gca, 'FontSize', 20);
-xlim([0 55]);
+xlim([0 param_simtime]);
 ylim([0.014 0.020]);
 
 figure('Name', 'y_2 - f=34.5 // sinus');
@@ -139,7 +147,7 @@ grid minor;
 ylabel 'Displacement [m]';
 xlabel 'Time [s]';
 set(gca, 'FontSize', 20);
-xlim([0 55]);
+xlim([0 param_simtime]);
 ylim([-0.002 0.002]);
 
 figure('Name', 'f=34.5 // sinus - POWER');
@@ -149,7 +157,7 @@ grid minor;
 ylabel 'Power [W]';
 xlabel 'Time [s]';
 set(gca, 'FontSize', 20);
-xlim([0 55]);
+xlim([0 param_simtime]);
 %ylim([-10 10]);
 
 power_ = c1.get('power');
@@ -157,7 +165,7 @@ power_result = 0;
 for i=1:1:size(power_)
     power_result = power_result + power_(i);
 end
-power_result = power_result / sim_time;
+power_result = power_result / param_simtime;
 disp('f=34.5 // sinus - POWER: ' + string(power_result));
 
 
@@ -169,7 +177,7 @@ grid minor;
 ylabel 'Displacement [m]';
 xlabel 'Time [s]';
 set(gca, 'FontSize', 20);
-xlim([0 55]);
+xlim([0 param_simtime]);
 ylim([0.014 0.020]);
 
 figure('Name', 'y_2 - f=34.5 // triangle');
@@ -179,7 +187,7 @@ grid minor;
 ylabel 'Displacement [m]';
 xlabel 'Time [s]';
 set(gca, 'FontSize', 20);
-xlim([0 55]);
+xlim([0 param_simtime]);
 ylim([-0.002 0.002]);
 
 figure('Name', 'f=34.5 // triangle - POWER');
@@ -189,7 +197,7 @@ grid minor;
 ylabel 'Power [W]';
 xlabel 'Time [s]';
 set(gca, 'FontSize', 20);
-xlim([0 55]);
+xlim([0 param_simtime]);
 %ylim([-10 10]);
 
 power_ = d1.get('power');
@@ -197,7 +205,7 @@ power_result = 0;
 for i=1:1:size(power_)
     power_result = power_result + power_(i);
 end
-power_result = power_result / sim_time;
+power_result = power_result / param_simtime;
 disp('f=34.5 // triangle - POWER: ' + string(power_result));
 
 
@@ -213,7 +221,7 @@ grid minor;
 ylabel 'Displacement [m]';
 xlabel 'Time [s]';
 set(gca, 'FontSize', 20);
-xlim([0 55]);
+xlim([0 param_simtime]);
 ylim([0.014 0.020]);
 legend('show');
 
@@ -228,7 +236,7 @@ grid minor;
 ylabel 'Displacement [m]';
 xlabel 'Time [s]';
 set(gca, 'FontSize', 20);
-xlim([0 55]);
+xlim([0 param_simtime]);
 ylim([-0.002 0.002]);
 legend('show');
 
@@ -246,7 +254,7 @@ legend('show');
 % ylabel 'Displacement [m]';
 % xlabel 'Time [s]';
 % set(gca, 'FontSize', 20);
-% xlim([0 55]);
+% xlim([0 param_simtime]);
 % %ylim([-10 10]);
 % 
 % figure('Name', 'y_2 - f=17 // pwm');
@@ -256,7 +264,7 @@ legend('show');
 % ylabel 'Displacement [m]';
 % xlabel 'Time [s]';
 % set(gca, 'FontSize', 20);
-% xlim([0 55]);
+% xlim([0 param_simtime]);
 % %ylim([-10 10]);
 % 
 % figure('Name', 'f=17 // pwm - POWER');
@@ -266,7 +274,7 @@ legend('show');
 % ylabel 'Power [W]';
 % xlabel 'Time [s]';
 % set(gca, 'FontSize', 20);
-% xlim([0 55]);
+% xlim([0 param_simtime]);
 % %ylim([-10 10]);
 % 
 % power_ = a2.get('power');
@@ -274,7 +282,7 @@ legend('show');
 % for i=1:1:size(power_)
 %     power_result = power_result + power_(i);
 % end
-% power_result = power_result / sim_time;
+% power_result = power_result / param_simtime;
 % disp('f=17 // pwm - POWER: ' + string(power_result));
 % 
 % 
@@ -286,7 +294,7 @@ legend('show');
 % ylabel 'Displacement [m]';
 % xlabel 'Time [s]';
 % set(gca, 'FontSize', 20);
-% xlim([0 55]);
+% xlim([0 param_simtime]);
 % %ylim([-10 10]);
 % 
 % figure('Name', 'y_2 - f=17 // sawtooth');
@@ -296,7 +304,7 @@ legend('show');
 % ylabel 'Displacement [m]';
 % xlabel 'Time [s]';
 % set(gca, 'FontSize', 20);
-% xlim([0 55]);
+% xlim([0 param_simtime]);
 % %ylim([-10 10]);
 % 
 % figure('Name', 'f=17 // sawtooth - POWER');
@@ -306,7 +314,7 @@ legend('show');
 % ylabel 'Power [W]';
 % xlabel 'Time [s]';
 % set(gca, 'FontSize', 20);
-% xlim([0 55]);
+% xlim([0 param_simtime]);
 % %ylim([-10 10]);
 % 
 % power_ = b2.get('power');
@@ -314,7 +322,7 @@ legend('show');
 % for i=1:1:size(power_)
 %     power_result = power_result + power_(i);
 % end
-% power_result = power_result / sim_time;
+% power_result = power_result / param_simtime;
 % disp('f=17 // sawtooth - POWER: ' + string(power_result));
 % 
 % 
@@ -326,7 +334,7 @@ legend('show');
 % ylabel 'Displacement [m]';
 % xlabel 'Time [s]';
 % set(gca, 'FontSize', 20);
-% xlim([0 55]);
+% xlim([0 param_simtime]);
 % %ylim([-10 10]);
 % 
 % figure('Name', 'y_2 - f=17 // sinus');
@@ -336,7 +344,7 @@ legend('show');
 % ylabel 'Displacement [m]';
 % xlabel 'Time [s]';
 % set(gca, 'FontSize', 20);
-% xlim([0 55]);
+% xlim([0 param_simtime]);
 % %ylim([-10 10]);
 % 
 % figure('Name', 'f=17 // sinus - POWER');
@@ -346,7 +354,7 @@ legend('show');
 % ylabel 'Power [W]';
 % xlabel 'Time [s]';
 % set(gca, 'FontSize', 20);
-% xlim([0 55]);
+% xlim([0 param_simtime]);
 % %ylim([-10 10]);
 % 
 % power_ = c2.get('power');
@@ -354,7 +362,7 @@ legend('show');
 % for i=1:1:size(power_)
 %     power_result = power_result + power_(i);
 % end
-% power_result = power_result / sim_time;
+% power_result = power_result / param_simtime;
 % disp('f=17 // sinus - POWER: ' + string(power_result));
 % 
 % 
@@ -366,7 +374,7 @@ legend('show');
 % ylabel 'Displacement [m]';
 % xlabel 'Time [s]';
 % set(gca, 'FontSize', 20);
-% xlim([0 55]);
+% xlim([0 param_simtime]);
 % %ylim([-10 10]);
 % 
 % figure('Name', 'y_2 - f=17 // triangle');
@@ -376,7 +384,7 @@ legend('show');
 % ylabel 'Displacement [m]';
 % xlabel 'Time [s]';
 % set(gca, 'FontSize', 20);
-% xlim([0 55]);
+% xlim([0 param_simtime]);
 % %ylim([-10 10]);
 % 
 % figure('Name', 'f=17 // triangle - POWER');
@@ -386,7 +394,7 @@ legend('show');
 % ylabel 'Power [W]';
 % xlabel 'Time [s]';
 % set(gca, 'FontSize', 20);
-% xlim([0 55]);
+% xlim([0 param_simtime]);
 % %ylim([-10 10]);
 % 
 % power_ = d2.get('power');
@@ -394,6 +402,6 @@ legend('show');
 % for i=1:1:size(power_)
 %     power_result = power_result + power_(i);
 % end
-% power_result = power_result / sim_time;
+% power_result = power_result / param_simtime;
 % disp('f=17 // triangle - POWER: ' + string(power_result));
 % 

@@ -9,6 +9,8 @@ if (doSimulation == true)
 end
 close ALL;
 
+param_simtime = 55;
+
 param_v = 0;
 param_f = 0.001;
 param_N = 8;
@@ -29,6 +31,8 @@ k_2_high    = 66400;
 
 %%%%% DECREASE M %%%%%
 if (doSimulation == true)
+    set_param('DEA_strip_t5', 'StopTime', param_simtime');
+
     param_k2  = k_2_default;
     param_m2  = m_2_low;
     a = sim('DEA_strip_t5', 'SimulationMode', 'normal');
@@ -41,7 +45,7 @@ grid minor;
 ylabel 'Displacement [m]';
 xlabel 'Time [s] and Frequency [Hz]';
 set(gca, 'FontSize', 20);
-xlim([0 55]);
+xlim([0 param_simtime]);
 ylim([0.014 0.020]);
 
 figure('Name', 'y_2 - m2=' + string(param_m2) + ', k2=' + string(param_k2));
@@ -51,7 +55,7 @@ grid minor;
 ylabel 'Displacement [m]';
 xlabel 'Time [s] and Frequency [Hz]';
 set(gca, 'FontSize', 20);
-xlim([0 55]);
+xlim([0 param_simtime]);
 ylim([-0.002 0.002]);
 
 %%%%% INCREASE M %%%%%
@@ -68,7 +72,7 @@ grid minor;
 ylabel 'Displacement [m]';
 xlabel 'Time [s] and Frequency [Hz]';
 set(gca, 'FontSize', 20);
-xlim([0 55]);
+xlim([0 param_simtime]);
 ylim([0.014 0.020]);
 
 figure('Name', 'y_2 - m2=' + string(param_m2) + ', k2=' + string(param_k2));
@@ -78,7 +82,7 @@ grid minor;
 ylabel 'Displacement [m]';
 xlabel 'Time [s] and Frequency [Hz]';
 set(gca, 'FontSize', 20);
-xlim([0 55]);
+xlim([0 param_simtime]);
 ylim([-0.002 0.002]);
 
 %%%%% DECREASE K %%%%%
@@ -95,7 +99,7 @@ grid minor;
 ylabel 'Displacement [m]';
 xlabel 'Time [s] and Frequency [Hz]';
 set(gca, 'FontSize', 20);
-xlim([0 55]);
+xlim([0 param_simtime]);
 ylim([0.014 0.020]);
 
 figure('Name', 'y_2 - m2=' + string(param_m2) + ', k2=' + string(param_k2));
@@ -105,7 +109,7 @@ grid minor;
 ylabel 'Displacement [m]';
 xlabel 'Time [s] and Frequency [Hz]';
 set(gca, 'FontSize', 20);
-xlim([0 55]);
+xlim([0 param_simtime]);
 ylim([-0.002 0.002]);
 
 %%%%% INCREASE K %%%%%
@@ -122,7 +126,7 @@ grid minor;
 ylabel 'Displacement [m]';
 xlabel 'Time [s] and Frequency [Hz]';
 set(gca, 'FontSize', 20);
-xlim([0 55]);
+xlim([0 param_simtime]);
 ylim([0.014 0.020]);
 
 figure('Name', 'y_2 - m2=' + string(param_m2) + ', k2=' + string(param_k2));
@@ -132,7 +136,7 @@ grid minor;
 ylabel 'Displacement [m]';
 xlabel 'Time [s] and Frequency [Hz]';
 set(gca, 'FontSize', 20);
-xlim([0 55]);
+xlim([0 param_simtime]);
 ylim([-0.002 0.002]);
 
 %%%%% DEFAULT VALUES (like Task3) %%%%%
@@ -149,7 +153,7 @@ grid minor;
 ylabel 'Displacement [m]';
 xlabel 'Time [s] and Frequency [Hz]';
 set(gca, 'FontSize', 20);
-xlim([0 55]);
+xlim([0 param_simtime]);
 ylim([0.014 0.020]);
 
 figure('Name', 'y_2 - m2=' + string(param_m2) + ', k2=' + string(param_k2));
@@ -159,7 +163,7 @@ grid minor;
 ylabel 'Displacement [m]';
 xlabel 'Time [s] and Frequency [Hz]';
 set(gca, 'FontSize', 20);
-xlim([0 55]);
+xlim([0 param_simtime]);
 ylim([-0.002 0.002]);
 
 
@@ -175,7 +179,7 @@ ylabel 'Displacement [m]';
 xlabel 'Time [s] and Frequency [Hz]';
 set(gca, 'FontSize', 20);
 legend('show');
-xlim([0 55]);
+xlim([0 param_simtime]);
 ylim([0.014 0.020]);
 
 figure('Name', 'y_1 - different K');
@@ -189,7 +193,7 @@ ylabel 'Displacement [m]';
 xlabel 'Time [s] and Frequency [Hz]';
 set(gca, 'FontSize', 20);
 legend('show');
-xlim([0 55]);
+xlim([0 param_simtime]);
 ylim([0.014 0.020]);
 
 figure('Name', 'y_2 - different masses');
@@ -203,7 +207,7 @@ ylabel 'Displacement [m]';
 xlabel 'Time [s] and Frequency [Hz]';
 set(gca, 'FontSize', 20);
 legend('show');
-xlim([0 55]);
+xlim([0 param_simtime]);
 ylim([-0.002 0.002]);
 
 figure('Name', 'y_2 - different K');
@@ -217,7 +221,7 @@ ylabel 'Displacement [m]';
 xlabel 'Time [s] and Frequency [Hz]';
 set(gca, 'FontSize', 20);
 legend('show');
-xlim([0 55]);
+xlim([0 param_simtime]);
 ylim([-0.002 0.002]);
 
 if (doSimulation == true)
@@ -235,7 +239,7 @@ ylabel 'Displacement [m]';
 xlabel 'Time [s] and Frequency [Hz]';
 set(gca, 'FontSize', 20);
 legend('show');
-xlim([0 55]);
+xlim([0 param_simtime]);
 ylim([0.014 0.020]);
 
 figure('Name', 'y_2 - double and half');
@@ -248,6 +252,6 @@ ylabel 'Displacement [m]';
 xlabel 'Time [s] and Frequency [Hz]';
 set(gca, 'FontSize', 20);
 legend('show');
-xlim([0 55]);
+xlim([0 param_simtime]);
 ylim([-0.002 0.002]);
 
