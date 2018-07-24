@@ -1,9 +1,6 @@
-%clc;
-%clear;
-%close ALL;
-
-
-
+clc;
+clear;
+close ALL;
 
 param_v = 0;
 param_f = 0.001;
@@ -18,7 +15,7 @@ param_m1  = 0.25;
 param_m2  = 0.25;
 param_g   = 9.81;
 
-%a = sim('DEA_strip_t3a', 'SimulationMode', 'normal');
+a = sim('DEA_strip_t3a', 'SimulationMode', 'normal');
 
 figure('Name', 'y_1 - time');
 
@@ -28,7 +25,7 @@ grid minor;
 ylabel 'Displacement [m]';
 xlabel 'Time [s] and Frequency [Hz]';
 set(gca, 'FontSize', 20);
-xlim([0 70]);
+xlim([0 300]);
 
 
 figure('Name', 'y_2 - time');
@@ -38,4 +35,4 @@ grid minor;
 ylabel 'Displacement [m]';
 xlabel 'Time [s] and Frequency [Hz]';
 set(gca, 'FontSize', 20);
-xlim([0 70]);
+xlim([0 300]);
