@@ -28,16 +28,12 @@ param_g   = 9.81;
 if (doSimulation == true)    
     param_f_res = 34.5;
     
-    set_param('DEA_strip_t6_pwm', 'StopTime', param_simtime');
     a1 = sim('DEA_strip_t6_pwm', 'SimulationMode', 'normal');
-    
-    set_param('DEA_strip_t6_sawtooth', 'StopTime', param_simtime');
+
     b1 = sim('DEA_strip_t6_sawtooth', 'SimulationMode', 'normal');
-    
-    set_param('DEA_strip_t6_sinus', 'StopTime', param_simtime');
+
     c1 = sim('DEA_strip_t6_sinus', 'SimulationMode', 'normal');
-    
-    set_param('DEA_strip_t6_triangle', 'StopTime', param_simtime');
+
     d1 = sim('DEA_strip_t6_triangle', 'SimulationMode', 'normal');
     
     %param_f_res = 17;

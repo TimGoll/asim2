@@ -2,9 +2,6 @@ clc;
 clear;
 close ALL;
 
-
-
-
 param_v = 0;
 param_f = 0.001;
 param_N = 8;

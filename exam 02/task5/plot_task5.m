@@ -31,8 +31,6 @@ k_2_high    = 66400;
 
 %%%%% DECREASE M %%%%%
 if (doSimulation == true)
-    set_param('DEA_strip_t5', 'StopTime', param_simtime');
-
     param_k2  = k_2_default;
     param_m2  = m_2_low;
     a = sim('DEA_strip_t5', 'SimulationMode', 'normal');
