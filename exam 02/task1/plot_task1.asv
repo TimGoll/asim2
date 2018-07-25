@@ -48,7 +48,7 @@ plot(a.get('length'), a.get('bias_force'), 'Linewidth', 2, 'DisplayName', 'Bias,
 ylim([0 10]);
 grid;
 grid minor;
-ylabel 'Force [N]';
+ylabel 'y1 [m]';
 xlabel 'length [m]';
 set(gca, 'FontSize', 20);
 legend('show');
