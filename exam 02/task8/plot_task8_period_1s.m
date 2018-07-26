@@ -3,7 +3,8 @@ clear;
 close ALL;
 
 
-
+param_cut_off = 40;
+param_period = 1;
 param_simtime = 1000;
 param_v = 0;
 param_f = 0.001;
