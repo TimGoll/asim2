@@ -15,6 +15,18 @@ xlabel 'Time [s]';
 xlim([0 param_simtime]);
 set(gca, 'FontSize', 20);
 
+
+a = sim('chirp_test', 'SimulationMode', 'normal');
+figure('Name', 'Chirp squared test');
+plot(a.get('time'), a.get('chirp_squared'), 'Linewidth', 2);
+grid;
+grid minor;
+ylabel 'Displacement [m]';
+xlabel 'Time [s]';
+xlim([0 param_simtime]);
+ylim([0 1]);
+set(gca, 'FontSize', 20);
+
 figure('Name', 'pwm test');
 plot(a.get('time'), a.get('pwm'), 'Linewidth', 2);
 grid;

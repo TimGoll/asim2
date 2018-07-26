@@ -1,6 +1,6 @@
 %set this variable to true, if the workspace should be cleared and the
 %simulation should be rerun
-doSimulation = false;
+doSimulation = true;
 
 if (doSimulation == true)
     clc;
