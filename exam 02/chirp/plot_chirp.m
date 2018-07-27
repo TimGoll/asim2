@@ -24,7 +24,7 @@ grid minor;
 ylabel 'Displacement [m]';
 xlabel 'Time [s]';
 xlim([0 param_simtime]);
-ylim([0 1]);
+ylim([0 1.5]);
 set(gca, 'FontSize', 20);
 
 figure('Name', 'pwm test');
